@@ -21,7 +21,7 @@
 <body ng-controller="journauxCtrl">
 	<h3> <span></span>exprerimentation du deployd en back-end</h3>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		<a class="navbar-brand" href="">Journeaux</a>
+		<a class="navbar-brand" href="">Journaux</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
       </button>
@@ -47,7 +47,7 @@
         <button ng-click="selectCategory()"
         class="btn btn-block btn-link btn-lg">Home</button>
         <button ng-repeat="item in data.products | orderBy:'category' | unique:'category'"
-        ng-click="selectCategory(item)" ng-class="getCategoryClass(item)" class="btn btn-block  btn-lg ">
+        ng-click="selectCategory(item)" ng-class="getCategoryClass(item)" class="btn btn-block btn-default btn-lg ">
         {{item}}
         </button>
 
