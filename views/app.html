@@ -47,7 +47,7 @@
         <button ng-click="selectCategory()"
         class="btn btn-block btn-link btn-lg">Home</button>
         <button ng-repeat="item in data.products | orderBy:'category' | unique:'category'"
-        ng-click="selectCategory(item)" class="btn btn-block btn-secondary btn-lg ">
+        ng-click="selectCategory(item)" ng-class="getCategoryClass(item)" class="btn btn-block  btn-lg ">
         {{item}}
         </button>
 
