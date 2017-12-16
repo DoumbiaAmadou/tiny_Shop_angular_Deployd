@@ -1,5 +1,5 @@
 myApp.constant("productListActiveClass", "active btn-primary")
-.constant("pagniner" , 4)
+.constant("pagniner" , 2)
 .controller("productListCtrl" , ($scope , $filter,productListActiveClass , pagniner) =>{
 	var selectedCategory   = null ; 
 	$scope.currentPage =1 ; 

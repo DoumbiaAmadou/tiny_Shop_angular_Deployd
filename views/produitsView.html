@@ -1,0 +1,41 @@
+   
+    <div class="row grid-row" ng-controller="productListCtrl"  ng-hide="data.error">
+        <div class="col-sm-3"> 
+            <button ng-click="selectCategory()"
+                class="btn btn-block btn-link btn-lg">Home</button>
+                <button ng-repeat="item in data.products | orderBy:'category' | unique:'category'"
+                ng-click="selectCategory(item)" ng-class="getCategoryClass(item)" class="btn btn-block btn-default btn-lg ">
+                {{item}}
+            </button>
+        </div>
+        <div class="col-sm-8 ">
+            <div class="pull-right" >
+                <nav aria-label="...">
+                    <ul class="pagination">
+
+                        <li class="page-item"  ng-repeat="page in data.products | filter:categoryFilterFn | pageCount:pageSize " ng-class="getPageClass($index + 1)">
+                            <a class="page-link" ng-click=" selectPage( $index + 1 ) ">{{$index + 1}} </a>
+                        </li> 
+
+                    </ul>
+                </nav>
+                    <!--div class="pull-right btn-group"> 
+                        <button ng-repeat="page in data.products | filter:categoryFilterFn | pageCount:pageSize "
+                         ng-click=" selectPage( $index + 1 ) " class="badge badge-primary" ng-class="getPageClass($index + 1)"> {{$index + 1}} </button>
+                     </div-->
+                 </div> 
+            <div class="row container">
+
+                <div class="card  m-2" style="width: 20rem;" ng-repeat="item in data.products | filter:categoryFilterFn | range:currentPage:pageSize">
+                  <img class="card-img-top" src="{{item.image}}" alt="{{item.name}} ">
+                    <div class="card-block  m-2">
+                        <h4 class="card-title">{{item.nom}} </h4>
+                        <p class="card-text">{{item.description}}.</p>
+                        <a href="#" class="btn btn-primary align-bottom">Add in Card</a>
+                    </div>
+                </div>
+            </div>
+            <p />
+        </div>      
+  
+    </div>

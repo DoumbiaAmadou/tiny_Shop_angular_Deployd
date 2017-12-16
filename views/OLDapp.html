@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="journaux">
+<head>
+	<title>  Site de produit Deployd</title>
+
+    <script src="./js/angular.js"></script>
+    <script  src="./js/jquery.js" type="text/javascript"></script>
+    <script>
+       angular.module("journaux" , ["customFilters"]);
+   </script>
+   <link href="./css/bootstrap.css" rel="stylesheet"  type="text/css"/>
+
+
+
+
+   <script src="./../controllers/journaux.js"></script>
+   <script src="./../filters/customFilters.js"></script>
+   <script src="./../controllers/productListControllers.js"></script>
+
+</head>
+<body ng-controller="journauxCtrl">
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="">Journaux</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarNav" >
+            <ul class="nav navbar-nav list-inline">
+                <li class="nav-item">
+                <a class="nav-link" href="">Categories</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="">Produits</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">Offres</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="alert alert-danger" ng-show="data.error">
+        Error ({{data.error.status}}). The product data was not loaded.
+        <a href="" class="alert-link">Click here to try again</a>
+    </div>
+
+    <ng-include src="'produitsView.html'">  </ng-include>
+
+
+<script  src="./js/jquery.js" type="text/javascript"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+
+<script src="./js/bootstrap.js" type="text/javascript" ></script>
+
+</body>
+
+</html>
