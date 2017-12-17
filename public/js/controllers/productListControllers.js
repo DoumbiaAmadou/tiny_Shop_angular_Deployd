@@ -19,9 +19,11 @@ myApp.constant("productListActiveClass", "active btn-primary")
 		console.log("amadou ");
 		$scope.currentPage = page;
 	}
+
 	$scope.getCategoryClass = function (category) {
 		return selectedCategory == category ? productListActiveClass : "";
 	}
+	
 	$scope.getPageClass = (page)=>{
 		return $scope.currentPage == page ? productListActiveClass:"" ; 
 	}
