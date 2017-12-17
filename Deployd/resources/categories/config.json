@@ -1,0 +1,85 @@
+{
+	"type": "Collection",
+	"properties": {
+		"nom": {
+			"name": "nom",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "nom",
+			"order": 0
+		},
+		"description": {
+			"name": "description",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "description",
+			"order": 1
+		},
+		"qteDispo": {
+			"name": "qteDispo",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "qteDispo",
+			"order": 2
+		},
+		"disponible": {
+			"name": "disponible",
+			"type": "boolean",
+			"typeLabel": "boolean",
+			"required": false,
+			"id": "disponible",
+			"order": 3
+		},
+		"image": {
+			"name": "image",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "image",
+			"order": 4
+		},
+		"prixHT": {
+			"name": "prixHT",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "prixHT",
+			"order": 5
+		},
+		"taxePourcentage": {
+			"name": "taxePourcentage",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "taxePourcentage",
+			"order": 6
+		},
+		"qteVendu": {
+			"name": "qteVendu",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "qteVendu",
+			"order": 7
+		},
+		"remisePourcentage": {
+			"name": "remisePourcentage",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "remisePourcentage",
+			"order": 8
+		},
+		"categories": {
+			"name": "categories",
+			"type": "object",
+			"typeLabel": "object",
+			"required": false,
+			"id": "categories",
+			"order": 9
+		}
+	}
+}
