@@ -1,6 +1,6 @@
 myApp.constant("productListActiveClass", "active btn-primary")
 .constant("pagniner" , 2)
-.controller("productListCtrl" , ($scope , $filter,productListActiveClass , pagniner) =>{
+.controller("productListCtrl" , ($scope , $filter,productListActiveClass , pagniner , cart) =>{
 	var selectedCategory   = null ; 
 	$scope.currentPage =1 ; 
 	$scope.pageSize = pagniner;
@@ -16,7 +16,7 @@ myApp.constant("productListActiveClass", "active btn-primary")
 	}
 	
 	$scope.selectPage = function(page){
-		console.log("amadou ");
+		/*console.log("amadou ");*/
 		$scope.currentPage = page;
 	}
 
@@ -27,6 +27,8 @@ myApp.constant("productListActiveClass", "active btn-primary")
 	$scope.getPageClass = (page)=>{
 		return $scope.currentPage == page ? productListActiveClass:"" ; 
 	}
-
+	$scope.addProductToCart = function (product) {
+		cart.addProduct(product.id, product.nom, product.prixHT * product.taxePourcentage);
+	}
 
 });

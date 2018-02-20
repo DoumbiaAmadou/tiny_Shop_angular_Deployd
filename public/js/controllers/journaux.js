@@ -1,11 +1,22 @@
-window.myApp =angular.module("journaux" , ['customFilters']);
+window.myApp =angular.module("journaux" , ['customFilters' , 'cart' , 'ngRoute']);
 myApp.constant("dataUrl" ,  "http://localhost:2403/produits")
 //myApp.constant("dataUrl" ,  "http://localhost:2403/dontesist")
-.controller("journauxCtrl",  function ($scope , $http , dataUrl) {
 
+.config(function ($routeProvider, $locationProvider) {
+	$locationProvider.html5Mode(false);
+    $locationProvider.hashPrefix("");
+	$routeProvider.when("/checkout", {
+		templateUrl: "/js/components/cart/checkoutSummary.html"
+	});
+	$routeProvider.when("/products", {
+		templateUrl: "/PrivateViews/produitsView.html"
+	});
+	$routeProvider.otherwise({
+		templateUrl: "/PrivateViews/produitsView.html"
+	});
+})
+.controller("journauxCtrl",  function ($scope , $http , dataUrl) {
 	$scope.data = {
-		
-		
 		/*		products: [
 		{ name: "Product #1", description: "A product",	category: "Category #1", price: 60 },
 		{ name: "Product #2", description: "A product",	category: "Category #1", price: 410 },
@@ -22,10 +33,9 @@ myApp.constant("dataUrl" ,  "http://localhost:2403/produits")
 		{ name: "Product #13", description: "A product",category: "Category #3", price: 42 },
 		]*/
 	};
-
 	$http.get(dataUrl)
-	.then( function(response  ){
-		console.log( " staus "+ response.data.message );
+	.then( function(response){
+		//console.log( " staus "+ response.data.message );
 		if(response.status ==200)
 			$scope.data.products= response.data ;
 		else 

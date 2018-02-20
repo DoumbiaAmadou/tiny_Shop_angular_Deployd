@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www ",
-    "stop": "pkill --signal SIGINT proangular"
+    "start": "node app.js", 
+    "stop": ""
   },
   "dependencies": {
     "body-parser": "~1.18.2",

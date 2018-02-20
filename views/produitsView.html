@@ -30,8 +30,13 @@
                   <img class="card-img-top" src="{{item.image}}" alt="{{item.name}} ">
                     <div class="card-block  m-2">
                         <h4 class="card-title">{{item.nom}} </h4>
-                        <p class="card-text">{{item.description}}.</p>
-                        <a href="#" class="btn btn-primary align-bottom">Add in Card</a>
+                        <p class="card-text">{{item.description}}</p>
+                       
+                         
+                        <span class="badge badge-info float-right"> 
+                            {{item.prixHT * item.taxePourcentage | currency:"€"}}
+                        </span>  
+                        <a ng-click="addProductToCart(item)" class="btn btn-primary align-bottom">Add in Card</a>
                     </div>
                 </div>
             </div>
