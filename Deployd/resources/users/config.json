@@ -1,29 +1,13 @@
 {
-	"type": "Collection",
+	"type": "UserCollection",
 	"properties": {
-		"username": {
-			"name": "username",
-			"type": "string",
-			"typeLabel": "string",
-			"required": true,
-			"id": "username",
-			"order": 0
-		},
-		"password": {
-			"name": "password",
-			"type": "string",
-			"typeLabel": "string",
-			"required": true,
-			"id": "password",
-			"order": 1
-		},
 		"email": {
 			"name": "email",
 			"type": "string",
 			"typeLabel": "string",
 			"required": true,
 			"id": "email",
-			"order": 2
+			"order": 0
 		},
 		"firstName": {
 			"name": "firstName",
@@ -31,7 +15,7 @@
 			"typeLabel": "string",
 			"required": true,
 			"id": "firstName",
-			"order": 3
+			"order": 1
 		},
 		"lastName": {
 			"name": "lastName",
@@ -39,7 +23,7 @@
 			"typeLabel": "string",
 			"required": true,
 			"id": "lastName",
-			"order": 4
+			"order": 2
 		}
 	}
 }

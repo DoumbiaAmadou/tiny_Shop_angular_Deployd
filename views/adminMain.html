@@ -1,3 +1,16 @@
-<div class="well">
-    This is the main view
+<div class="container-fluid">
+    <p></p>
+<div class="panel panel-default row" ng-controller="mainCtrl">
+    <div class="col-sm-3  panel-body">
+        <div class="col-sm-10 mx-auto">
+            <a ng-repeat="item in screens" class="btn btn-block btn-default" ng-class="{'btn-primary': item == current , ' btn-light': item != current }" ng-click="setScreen($index)">
+            {{item}}
+        </a>
+        </div>
+        
+    </div>
+    <div class="col-sm-8 panel-body">
+        <div ng-include="getScreen()" />
+    </div>
+</div>
 </div>

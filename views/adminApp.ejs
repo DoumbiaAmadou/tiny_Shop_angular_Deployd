@@ -3,18 +3,27 @@
 
 <head>
     <title>Administration</title>
-    <script src="angular.js"></script>
-    <script src="ngmodules/angular-route.js"></script>
-    <link href="bootstrap.css" rel="stylesheet" />
-    <link href="bootstrap-theme.css" rel="stylesheet" />
+
+    <meta http-equiv="Content-Type" content="text/html; charset=latin1" />
+    <script src="/js/angular.js"></script>
+    <script src="/js/jquery.js" type="text/javascript"></script>
+    <link href="/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="/css/additional.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.angularjs.org/1.6.6/angular-route.js"></script>
+    <script src="https://code.angularjs.org/1.6.6/angular-resource.js"></script>
+
+    <script src="/js/controllers/journaux.js"></script>
+    <script src="/js/controllers/adminControllers.js"></script>
     <script>
-        angular.module("journaux", ["ngRoute"])
-            .config(function ($routeProvider) {
+        angular.module("journaux", ["ngRoute", "ngResource"])
+            .config(function ($routeProvider, $locationProvider) {
+                $locationProvider.html5Mode(false);
+                $locationProvider.hashPrefix("");
                 $routeProvider.when("/login", {
-                    templateUrl: "/views/adminLogin.html"
+                    templateUrl: "/PrivateViews/adminLogin.html"
                 });
                 $routeProvider.when("/main", {
-                    templateUrl: "/views/adminMain.html"
+                    templateUrl: "/PrivateViews/adminMain.html"
                 });
                 $routeProvider.otherwise({
                     redirectTo: "/login"
@@ -22,6 +31,7 @@
             });
     </script>
     <script src="/js/controllers/adminControllers.js"></script>
+    <script src="/js/controllers/adminProductController.js"></script>
 </head>
 
 <body>
@@ -29,4 +39,3 @@
 </body>
 
 </html>
-This HT

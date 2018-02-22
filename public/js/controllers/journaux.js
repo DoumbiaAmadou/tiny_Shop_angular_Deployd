@@ -50,7 +50,7 @@ myApp.constant("dataUrl" ,  "http://localhost:2403/produits")
 	});
 	$scope.sendOrder = function (shippingDetails) {
 		var order = angular.copy(shippingDetails);
-		order.products = cart.getProducts();
+		order.produitArray = cart.getProducts();
 		$http.post(orderUrl, order)
 			.then(function (response) {
 				if(response.status==200){
