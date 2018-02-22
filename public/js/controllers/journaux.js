@@ -1,5 +1,6 @@
 window.myApp =angular.module("journaux" , ['customFilters' , 'cart' , 'ngRoute']);
 myApp.constant("dataUrl" ,  "http://localhost:2403/produits")
+.constant("orderUrl" ,  "http://localhost:2403/orders")
 //myApp.constant("dataUrl" ,  "http://localhost:2403/dontesist")
 
 .config(function ($routeProvider, $locationProvider) {
@@ -11,11 +12,17 @@ myApp.constant("dataUrl" ,  "http://localhost:2403/produits")
 	$routeProvider.when("/products", {
 		templateUrl: "/PrivateViews/produitsView.html"
 	});
+	$routeProvider.when("/placeorder" , {
+		templateUrl: "PrivateViews/placeOrder.html"
+	}); 
+	$routeProvider.when("/complete" , {
+		templateUrl: "PrivateViews/complete.html"
+	}); 
 	$routeProvider.otherwise({
 		templateUrl: "/PrivateViews/produitsView.html"
 	});
 })
-.controller("journauxCtrl",  function ($scope , $http , dataUrl) {
+.controller("journauxCtrl",  function ($scope , $http , $location, dataUrl  , orderUrl , cart) {
 	$scope.data = {
 		/*		products: [
 		{ name: "Product #1", description: "A product",	category: "Category #1", price: 60 },
@@ -41,4 +48,18 @@ myApp.constant("dataUrl" ,  "http://localhost:2403/produits")
 		else 
 			$scope.data.error = response.data.message ; 
 	});
+	$scope.sendOrder = function (shippingDetails) {
+		var order = angular.copy(shippingDetails);
+		order.products = cart.getProducts();
+		$http.post(orderUrl, order)
+			.then(function (response) {
+				if(response.status==200){
+					$scope.data.orderId = response.id;
+					cart.getProducts().length = 0;
+					$location.path("/complete");
+				}
+				else
+				 	$scope.data.orderError = error;
+			});
+	}
 });
