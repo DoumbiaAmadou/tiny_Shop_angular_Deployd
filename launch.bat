@@ -1,8 +1,16 @@
- mongod&  // to start the server. 
-cd Deployd
+ mongod &   
+ 
+ echo  "==================================================================="
+ // to start the server. 
+ //cd Deployd
  // lunch node ./bin/www 
-dpd -d
-cd ..
+ 
+ (cd Deployd/  && dpd -d &  )
+echo "==================================================================="
+//dpd -d
+
 npm start  // node app.js
+echo "==================================================================="
 
 start http://localhost:3000/
+echo "============ DONE ====================================="

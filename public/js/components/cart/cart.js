@@ -31,9 +31,9 @@ angular.module('cart' , [])
 	
 })
 .directive('cartSummary', function (cart) {
+	/** une directive est utilisée pour definir  un  nouveau composant */
 	return {
 		restrict: "E",
-		
 		 templateUrl: "/js/components/cart/cartSummary.html",
 		controller:  function ($scope) {
 			var cartData = cart.getProducts();

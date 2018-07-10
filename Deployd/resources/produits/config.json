@@ -5,7 +5,7 @@
 			"name": "nom",
 			"type": "string",
 			"typeLabel": "string",
-			"required": false,
+			"required": true,
 			"id": "nom",
 			"order": 0
 		},
@@ -13,7 +13,7 @@
 			"name": "description",
 			"type": "string",
 			"typeLabel": "string",
-			"required": false,
+			"required": true,
 			"id": "description",
 			"order": 1
 		},
@@ -37,7 +37,7 @@
 			"name": "image",
 			"type": "string",
 			"typeLabel": "string",
-			"required": false,
+			"required": true,
 			"id": "image",
 			"order": 4
 		},
@@ -45,7 +45,7 @@
 			"name": "prixHT",
 			"type": "number",
 			"typeLabel": "number",
-			"required": false,
+			"required": true,
 			"id": "prixHT",
 			"order": 5
 		},
@@ -53,7 +53,7 @@
 			"name": "taxePourcentage",
 			"type": "number",
 			"typeLabel": "number",
-			"required": false,
+			"required": true,
 			"id": "taxePourcentage",
 			"order": 6
 		},
@@ -73,12 +73,12 @@
 			"id": "remisePourcentage",
 			"order": 8
 		},
-		"categories": {
-			"name": "categories",
-			"type": "object",
-			"typeLabel": "object",
+		"category": {
+			"name": "category",
+			"type": "string",
+			"typeLabel": "string",
 			"required": false,
-			"id": "categories",
+			"id": "category",
 			"order": 9
 		}
 	}

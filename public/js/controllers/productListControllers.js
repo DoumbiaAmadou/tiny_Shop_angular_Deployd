@@ -16,7 +16,6 @@ myApp.constant("productListActiveClass", "active btn-primary")
 	}
 	
 	$scope.selectPage = function(page){
-		/*console.log("amadou ");*/
 		$scope.currentPage = page;
 	}
 

@@ -13,3 +13,8 @@ span.error {
 .well.mx-auto{
     width: 500px ; 
 }
+.collapse1{
+    overflow-y:scroll;
+    height:500px;
+    max-width:1100px;
+}
