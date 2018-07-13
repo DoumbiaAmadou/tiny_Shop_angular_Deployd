@@ -22,7 +22,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/PrivateViews', express.static(__dirname + '/views'));
 app.use('/PrivateJs', express.static(__dirname + '/js'));
-
+process.title = "Skelethon";
 
 app.use('/', index);
 app.use('/users', users);
